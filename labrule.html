@@ -16,6 +16,23 @@
     visibility: hidden !important;
 }
 </style>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		tex2jax: {
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+		}
+		});
+		MathJax.Hub.Queue(function() {
+			var all = MathJax.Hub.getAllJax(), i;
+			for(i = 0; i < all.length; i += 1) {
+				all[i].SourceElement().parentNode.className += ' has-jax';
+			}
+		});
+		MathJax.Hub.Config({
+			TeX: { equationNumbers: { autoNumber: "AMS" } }
+		});
+	</script>      
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
 </head>
 
 <body>
@@ -97,7 +114,7 @@ Mu-ming
 
     <span class="site-footer-owner">This page is maintained by <a href="#">Shengke Xue</a>.</span>
 	<span class="site-footer-credits">Created on Wednesday, 30-Nov-2016. Last modified on </span>
-	<!-- #BeginDate format:wfcEn2 -->Sunday, 23-Apr-2017<!-- #EndDate -->.
+	<!-- #BeginDate format:wfcEn2 -->Thursday, 25-May-2017<!-- #EndDate -->.
     </footer>
     
 </section>
