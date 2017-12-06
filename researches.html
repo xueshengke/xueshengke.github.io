@@ -95,7 +95,22 @@
     \end{equation}
 
     <strong>S. Xue</strong> and X. Jin. Robust classwise and projective low-rank representation for image
-    classification. <em>Signal, Image and Video Processing</em>, 1(1):1-9, <strong>2017</strong>. <a href="http://dx.doi.org/10.1007/s11760-017-1136-1" target="_blank">DOI 10.1007/s11760-017-1136-1</a>
+    classification. <em>Signal, Image and Video Processing</em>, 1(1):1-9, <strong>2017</strong>. <a href="https://doi.org/10.1007/s11760-017-1136-1" target="_blank">DOI 10.1007/s11760-017-1136-1</a>
+
+<hr>
+
+		<div align="center"><img src="./images/papers/t-SVD.png" align="middle" width="600" title="Fig. 2"></div>
+	<p><strong>Fig. 2</strong>&emsp;Illustration of the t-SVD of an \(n_1 \times n_2 \times n_3\) tensor, i.e., \(\mathcal{A} = \mathcal{U} * \mathcal{S} * \mathcal{V}^{\text{T}}\). Our tensor nuclear norm \(\|\mathcal{A}\|_*\) is defined as the sum of singular values of all frontal slices of the f-diagonal \(\mathcal{S}\), i.e.,	\( \|\mathcal{A}\|_* \triangleq \text{tr}(\mathcal{S}) = \sum_{i=1}^{n_3} \text{tr}({S}^{(i)}) =  \text{tr}(\bar{{S}}^{(1)}) = \|\bar{{A}}^{(1)}\|_*\). Note that our tensor nuclear norm becomes standard matrix nuclear norm when \(n_3 = 1\). Thus, our tensor nuclear norm can be considered as a direct extension from the matrix case to the tensor case. 
+	</p>
+
+    \begin{equation} \label{eq:tnnr_with_max}
+    \begin{aligned}
+    \min_{\mathcal{X}} \ \ & \|\mathcal{X}\|_* - \max_{\substack{\mathcal{A}_\ell * \mathcal{A}_\ell^\text{T} = \mathcal{I}, \\ \mathcal{B}_\ell * \mathcal{B}_\ell^\text{T} = \mathcal{I}}} \text{tr}(\mathcal{A}_\ell * \mathcal{X} * \mathcal{B}_\ell^\text{T}) \\
+    \text{s.t.} \, \ \  & \  \mathcal{X}_{{\Omega}} = \mathcal{M}_{{\Omega}} .
+    \end{aligned}
+    \end{equation}
+    
+	<strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Low-rank tensor completion by truncated nuclear norm regularization. <em>arXiv preprint</em>, submitted on 3 Dec <strong>2017</strong>. <a href="https://arxiv.org/abs/1712.00704" target="_blank">arXiv:1712.00704</a>
 
 <hr>
 
@@ -103,7 +118,7 @@
 
     <span class="site-footer-owner">This page is maintained by <a href="#">Shengke Xue</a>.</span>
 	<span class="site-footer-credits">Created on Wednesday, 30-Nov-2016. Last modified on </span>
-	<!-- #BeginDate format:wfcEn2 -->Thursday, 20-Jul-2017<!-- #EndDate -->.
+	<!-- #BeginDate format:wfcEn2 -->Wednesday, 06-Dec-2017<!-- #EndDate -->.
   </footer>
     
 </section>
