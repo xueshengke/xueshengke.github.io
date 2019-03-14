@@ -85,11 +85,27 @@
     
     <h1>
       <a id="Researches" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+    <img href src="images/icons/研究.png" width="25" height="25" align="baseline">
       Researches
     </h1>
 
-	<div align="center"><img src="./images/papers/Xue2017Robust.png" align="middle" width="500" height="400" title="Fig. 1"></div>
-	<p><strong>Fig. 1</strong>&emsp;An example of CPLRR architecture with 3 classes. In a classwise
+		<div align="center"><img src="./images/papers/t-SVD.png" align="middle" width="600" title="Fig. 1"></div>
+	<p><strong>Fig. 1</strong>&emsp;Illustration of the t-SVD of an \(n_1 \times n_2 \times n_3\) tensor, i.e., \(\mathcal{A} = \mathcal{U} * \mathcal{S} * \mathcal{V}^{\text{T}}\). Our tensor nuclear norm \(\|\mathcal{A}\|_*\) is defined as the sum of singular values of all frontal slices of the f-diagonal \(\mathcal{S}\), i.e.,	\( \|\mathcal{A}\|_* \triangleq \text{tr}(\mathcal{S}) = \sum_{i=1}^{n_3} \text{tr}({S}^{(i)}) =  \text{tr}(\bar{{S}}^{(1)}) = \|\bar{{A}}^{(1)}\|_*\). Note that our tensor nuclear norm becomes standard matrix nuclear norm when \(n_3 = 1\). Thus, our tensor nuclear norm can be considered as a direct extension from the matrix case to the tensor case. 
+	</p>
+
+    \begin{equation} \label{eq:tnnr_with_max}
+    \begin{aligned}
+    \min_{\mathcal{X}} \ \ & \|\mathcal{X}\|_* - \max_{\substack{\mathcal{A}_\ell * \mathcal{A}_\ell^\text{T} = \mathcal{I}, \\ \mathcal{B}_\ell * \mathcal{B}_\ell^\text{T} = \mathcal{I}}} \text{tr}(\mathcal{A}_\ell * \mathcal{X} * \mathcal{B}_\ell^\text{T}) \\
+    \text{s.t.} \, \ \  & \  \mathcal{X}_{{\Omega}} = \mathcal{M}_{{\Omega}} .
+    \end{aligned}
+    \end{equation}
+    
+    <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Low-rank tensor completion by truncated nuclear norm regularization. 24th International Conference on Pattern Recognition, Beijing, <strong>2018</strong>, p.2600-2605. <a href="https://ieeexplore.ieee.org/abstract/document/8546008" target="_blank">DOI 10.1109/ICPR.2018.8546008</a>
+
+<hr>
+
+	<div align="center"><img src="./images/papers/Xue2017Robust.png" align="middle" width="500" height="400" title="Fig. 2"></div>
+	<p><strong>Fig. 2</strong>&emsp;An example of CPLRR architecture with 3 classes. In a classwise
 	  manner, our approach jointly aligns images and learns a nonlinear
 	  projective function. It separates out the low-rank components with the
 	  domain transformations and projects the original corrupted images to
@@ -108,26 +124,11 @@
 
 <hr>
 
-		<div align="center"><img src="./images/papers/t-SVD.png" align="middle" width="600" title="Fig. 2"></div>
-	<p><strong>Fig. 2</strong>&emsp;Illustration of the t-SVD of an \(n_1 \times n_2 \times n_3\) tensor, i.e., \(\mathcal{A} = \mathcal{U} * \mathcal{S} * \mathcal{V}^{\text{T}}\). Our tensor nuclear norm \(\|\mathcal{A}\|_*\) is defined as the sum of singular values of all frontal slices of the f-diagonal \(\mathcal{S}\), i.e.,	\( \|\mathcal{A}\|_* \triangleq \text{tr}(\mathcal{S}) = \sum_{i=1}^{n_3} \text{tr}({S}^{(i)}) =  \text{tr}(\bar{{S}}^{(1)}) = \|\bar{{A}}^{(1)}\|_*\). Note that our tensor nuclear norm becomes standard matrix nuclear norm when \(n_3 = 1\). Thus, our tensor nuclear norm can be considered as a direct extension from the matrix case to the tensor case. 
-	</p>
-
-    \begin{equation} \label{eq:tnnr_with_max}
-    \begin{aligned}
-    \min_{\mathcal{X}} \ \ & \|\mathcal{X}\|_* - \max_{\substack{\mathcal{A}_\ell * \mathcal{A}_\ell^\text{T} = \mathcal{I}, \\ \mathcal{B}_\ell * \mathcal{B}_\ell^\text{T} = \mathcal{I}}} \text{tr}(\mathcal{A}_\ell * \mathcal{X} * \mathcal{B}_\ell^\text{T}) \\
-    \text{s.t.} \, \ \  & \  \mathcal{X}_{{\Omega}} = \mathcal{M}_{{\Omega}} .
-    \end{aligned}
-    \end{equation}
-    
-    <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Low-rank tensor completion by truncated nuclear norm regularization. 24th International Conference on Pattern Recognition, Beijing, <strong>2018</strong>, p.2600-2605. <a href="https://ieeexplore.ieee.org/abstract/document/8546008" target="_blank">DOI 10.1109/ICPR.2018.8546008</a>
-
-<hr>
-
 <footer class="site-footer">
 
     <span class="site-footer-owner">This page is maintained by <a href="#">Shengke Xue</a>.</span>
 	<span class="site-footer-credits">Created on Wednesday, 30-Nov-2016. Last modified on </span>
-	<!-- #BeginDate format:wfcEn2 -->Sunday, 17-Feb-2019<!-- #EndDate -->.
+	<!-- #BeginDate format:wfcEn2 -->Thursday, 14-Mar-2019<!-- #EndDate -->.
   </footer>
     
 </section>
