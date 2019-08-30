@@ -89,8 +89,32 @@
       Researches
     </h1>
 
-		<div align="center"><img src="./images/papers/t-SVD.png" align="middle" width="600" title="Fig. 1"></div>
-	<p><strong>Fig. 1</strong>&emsp;Illustration of the t-SVD of an \(n_1 \times n_2 \times n_3\) tensor, i.e., \(\mathcal{A} = \mathcal{U} * \mathcal{S} * \mathcal{V}^{\text{T}}\). Our tensor nuclear norm \(\|\mathcal{A}\|_*\) is defined as the sum of singular values of all frontal slices of the f-diagonal \(\mathcal{S}\), i.e.,	\( \|\mathcal{A}\|_* \triangleq \text{tr}(\mathcal{S}) = \sum_{i=1}^{n_3} \text{tr}({S}^{(i)}) =  \text{tr}(\bar{{S}}^{(1)}) = \|\bar{{A}}^{(1)}\|_*\). Note that our tensor nuclear norm becomes standard matrix nuclear norm when \(n_3 = 1\). Thus, our tensor nuclear norm can be considered as a direct extension from the matrix case to the tensor case. 
+	<div align="center"><img src="./images/papers/WRANSR_1.png" align="middle" width="800" title="Fig. 1"></div>
+	<p><strong>Fig. 1</strong>&emsp;Overall structure of our Wavelet-based residual attention network.
+	</p>
+	
+	<div align="center"><img src="./images/papers/WRANSR_block.png" align="middle" width="800" title="Fig. 2"></div>
+	<p><strong>Fig. 2</strong>&emsp;Multi-kernel convolutional layer, channel attention module. and spatial attention module. 
+	</p>
+	
+    [1] &nbsp; <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Wavelet-based residual attention network for image super-resolution. <em>Neurocomputing</em>, under review, <strong>2019</strong>.
+
+<hr>
+
+	<div align="center"><img src="./images/papers/IFNNSR_1.png" align="middle" width="800" title="Fig. 3"></div>
+	<p><strong>Fig. 3</strong>&emsp;Structure of our proposed network with one block.
+	</p>
+	
+	<div align="center"><img src="./images/papers/IFNNSR_2.png" align="middle" width="800" title="Fig. 4"></div>
+	<p><strong>Fig. 4</strong>&emsp;Overall structure of our proposed improved frequency domain neural network. 
+	</p>
+	
+    [2] &nbsp; <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Faster super-resolution by improved frequency domain neural networks. <em>Singal, Image and Video Processing</em>, in press, <strong>2019</strong>. <a href="https://doi.org/10.1007/s11760-019-01548-8" target="_blank">DOI 10.1007/s11760-019-01548-8</a>
+
+<hr>
+
+		<div align="center"><img src="./images/papers/t-SVD.png" align="middle" width="600" title="Fig. 5"></div>
+	<p><strong>Fig. 5</strong>&emsp;Illustration of the t-SVD of an \(n_1 \times n_2 \times n_3\) tensor, i.e., \(\mathcal{A} = \mathcal{U} * \mathcal{S} * \mathcal{V}^{\text{T}}\). Our tensor nuclear norm \(\|\mathcal{A}\|_*\) is defined as the sum of singular values of all frontal slices of the f-diagonal \(\mathcal{S}\), i.e.,	\( \|\mathcal{A}\|_* \triangleq \text{tr}(\mathcal{S}) = \sum_{i=1}^{n_3} \text{tr}({S}^{(i)}) =  \text{tr}(\bar{{S}}^{(1)}) = \|\bar{{A}}^{(1)}\|_*\). Note that our tensor nuclear norm becomes standard matrix nuclear norm when \(n_3 = 1\). Thus, our tensor nuclear norm can be considered as a direct extension from the matrix case to the tensor case. 
 	</p>
 
     \begin{equation} \label{eq:tnnr_with_max}
@@ -100,12 +124,12 @@
     \end{aligned}
     \end{equation}
     
-    <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Low-rank tensor completion by truncated nuclear norm regularization. 24th International Conference on Pattern Recognition, Beijing, <strong>2018</strong>, p.2600-2605. <a href="https://ieeexplore.ieee.org/abstract/document/8546008" target="_blank">DOI 10.1109/ICPR.2018.8546008</a>
+    [3] &nbsp; <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Low-rank tensor completion by truncated nuclear norm regularization. 24th International Conference on Pattern Recognition, Beijing, <strong>2018</strong>, p.2600-2605. <a href="https://ieeexplore.ieee.org/abstract/document/8546008" target="_blank">DOI 10.1109/ICPR.2018.8546008</a>
 
 <hr>
 
-	<div align="center"><img src="./images/papers/Xue2017Robust.png" align="middle" width="500" height="400" title="Fig. 2"></div>
-	<p><strong>Fig. 2</strong>&emsp;An example of CPLRR architecture with 3 classes. In a classwise
+	<div align="center"><img src="./images/papers/Xue2017Robust.png" align="middle" width="500" height="400" title="Fig. 6"></div>
+	<p><strong>Fig. 6</strong>&emsp;An example of CPLRR architecture with 3 classes. In a classwise
 	  manner, our approach jointly aligns images and learns a nonlinear
 	  projective function. It separates out the low-rank components with the
 	  domain transformations and projects the original corrupted images to
@@ -120,7 +144,7 @@
     \end{aligned}
     \end{equation}
 
-	<strong>S. Xue</strong> and X. Jin. Robust classwise and projective low-rank representation for image classification. <em>Signal, Image and Video Processing</em>, <strong>2018</strong>, 12(1):107-115. <a href="https://doi.org/10.1007/s11760-017-1136-1" target="_blank">DOI 10.1007/s11760-017-1136-1</a>
+	[4] &nbsp; <strong>S. Xue</strong> and X. Jin. Robust classwise and projective low-rank representation for image classification. <em>Signal, Image and Video Processing</em>, <strong>2018</strong>, 12(1):107-115. <a href="https://doi.org/10.1007/s11760-017-1136-1" target="_blank">DOI 10.1007/s11760-017-1136-1</a>
 
 <hr>
 
@@ -128,7 +152,7 @@
 
     <span class="site-footer-owner">This page is maintained by <a href="#">Shengke Xue</a>.</span>
 	<span class="site-footer-credits">Created on Wednesday, 30-Nov-2016. Last modified on </span>
-	<!-- #BeginDate format:wfcEn2 -->Thursday, 14-Mar-2019<!-- #EndDate -->.
+	<!-- #BeginDate format:wfcEn2 -->Thursday, 30-Aug-2019<!-- #EndDate -->.
   </footer>
     
 </section>
