@@ -89,32 +89,89 @@
       Researches
     </h1>
 
+    \begin{equation}
+        \hat{X}_{\rm u} = \hat{X}_{\rm in} \circ {M}_{\rm u} = \big[ \mathrm{real}(\mathcal{K}) \circ {M}_{\rm u}, \ \mathrm{imag}(\mathcal{K}) \circ {M}_{\rm u} \big] \in \mathbb{R}^{m \times n \times 2},
+      \label{eq:hardamard_undersample}
+    \end{equation}
+    
+	<div align="center"><img src="images/papers/probability_undersample.png" align="middle" width="500" title="Fig. 1"></div>
+	<p><strong>Fig. 1</strong>&emsp;Proposed 2D probabilistic undersampling layer: <em>P</em>u is the probability matrix; <em>M</em>u is the sampling matrix
+  </p>
+	
+    <div align="center"><img src="images/papers/probability_mask_result.png" align="middle" width="800" title="Fig. 2"></div>
+	<p><strong>Fig. 2</strong>&emsp;Probability matrices and sampling matrices from our 2D probabilistic undersampling layer (no RecNet), trained with the undersampling loss and stable constraints. Sampling rate: (a) 10%; (b) 20%; (c) 30%; (d) 40% 
+	</p>
+
+	<div align="center"><img src="images/papers/probability_mask_surface_curve.png" align="middle" width="800" title="Fig. 2"></div>
+	<p><strong>Fig. 3</strong>&emsp;Curves of the probability matrices from 2D probabilistic undersampling layer: 3D probability curve <em>P</em>face, central probability curve <em>P</em>center, and marginal probability curve <em>P</em>margin. Sampling rate: (a) 10%; (b) 20%; (c) 30%; (d) 40% 
+	</p>
+        
+    \begin{equation}
+    P_\mathrm{center}(t) = \begin{cases}
+    1,                             & |t| \leq {t_1},           \\
+    1 - \frac{1}{100\sqrt{\mathrm{rate}}} \mathrm{e}^{ \frac{8.1}{ \mathrm{rate} + {2}/{3}} (t - t_1) }, & t_1 < |t| < t_0,       \\
+    \frac{\mathrm{rate}}{\sqrt{2 \pi}},                      & t_0 \leq |t| \leq 1  ,
+    \end{cases} \label{eq:final_P_center} 
+    \end{equation}
+    
+    \begin{equation}
+    P_\mathrm{margin}(t) = \begin{cases}
+    -\frac{\mathrm{rate}}{3 \sqrt{2 \pi} \sigma^{4}} t^2 + \frac{2 \, \mathrm{rate}}{\sqrt{2 \pi} \sigma}, & |t| < t_0,  \\
+    \frac{\mathrm{rate}}{\sqrt{2 \pi}},               & t_0 \leq |t| \leq 1 ,
+    \end{cases}  \label{eq:final_P_margin} 
+    \end{equation}
+    
+    \begin{equation}
+    t = \dfrac{z - 128}{128} \in [-1, 1], \ \  z = 0,1,2,\ldots,256.
+    \end{equation}
+
+    \begin{equation}
+    P_\mathrm{face}(y,z) = \begin{cases}
+    1,                             & |d| \leq t_1,           \\
+    1 - \frac{1}{100\sqrt{\mathrm{rate}}} \mathrm{e}^{ \frac{8.1}{ \mathrm{rate} + {2}/{3}} \left (d - t_1 \right ) }, & t_1 < |d| < t_0,       \\
+    \frac{\mathrm{rate}}{\sqrt{2 \pi}},                      & t_0 \leq |d| \leq \sqrt{2}  ,
+    \end{cases} \label{eq:final_P_face} 
+    \end{equation}
+    
+    \begin{gather}
+    d = \frac{\sqrt{(y-128)^2 + (z-128)^2}}{128} \in [0, \sqrt{2}], \\
+     \forall \, y = 0, 1, 2, \ldots, 256, \ \  \forall \, z = 0,1, 2, \ldots, 256.
+    \end{gather}
+
+    <div align="center"><img src="images/papers/3D_curve_prob_mask.png" align="middle" width="800" title="Fig. 2"></div>
+	<p><strong>Fig. 4</strong>&emsp;Our optimal probability matrix and sampling matrix under sampling rate 20%. The 3D view of our undersampling pattern is given, where <em>y</em>, <em>z</em> are two phase encoding directions and <em>x</em> is the frequency encoding direction
+	</p>
+    
+    [1] &nbsp; <strong>S. Xue</strong>, R. Bai, and X. Jin. 2D probabilistic undersampling pattern optimization for MR image reconstruction. arXiv preprint, <strong>2020</strong>. <a href="https://arxiv.org/abs/2003.03797" target="_blank">arXiv:2003.03797</a></li>
+
+<hr>
+
 	<div align="center"><img src="./images/papers/WRANSR_1.png" align="middle" width="800" title="Fig. 1"></div>
-	<p><strong>Fig. 1</strong>&emsp;Overall structure of our Wavelet-based residual attention network.
+	<p><strong>Fig. 5</strong>&emsp;Overall structure of our Wavelet-based residual attention network.
 	</p>
 	
 	<div align="center"><img src="./images/papers/WRANSR_block.png" align="middle" width="800" title="Fig. 2"></div>
-	<p><strong>Fig. 2</strong>&emsp;Multi-kernel convolutional layer, channel attention module. and spatial attention module. 
-	</p>
+	<p><strong>Fig. 6</strong>&emsp;Multi-kernel convolutional layer, channel attention module. and spatial attention module. 
+</p>
 	
-    [1] &nbsp; <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Wavelet-based residual attention network for image super-resolution. <em>Neurocomputing</em>, <strong>2020</strong>, 382:116-126. <a href="https://doi.org/10.1016/j.neucom.2019.11.044" target="_blank">DOI 10.1016/j.neucom.2019.11.044</a></li>
+    [2] &nbsp; <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Wavelet-based residual attention network for image super-resolution. <em>Neurocomputing</em>, <strong>2020</strong>, 382:116-126. <a href="https://doi.org/10.1016/j.neucom.2019.11.044" target="_blank">DOI 10.1016/j.neucom.2019.11.044</a></li>
 
-<hr>
+    <hr>
 
 	<div align="center"><img src="./images/papers/IFNNSR_1.png" align="middle" width="800" title="Fig. 3"></div>
-	<p><strong>Fig. 3</strong>&emsp;Structure of our proposed network with one block.
+  <p><strong>Fig. 7</strong>&emsp;Structure of our proposed network with one block.
 	</p>
 	
 	<div align="center"><img src="./images/papers/IFNNSR_2.png" align="middle" width="800" title="Fig. 4"></div>
-	<p><strong>Fig. 4</strong>&emsp;Overall structure of our proposed improved frequency domain neural network. 
+	<p><strong>Fig. 8</strong>&emsp;Overall structure of our proposed improved frequency domain neural network. 
 	</p>
 	
-    [2] &nbsp; <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Faster super-resolution by improved frequency domain neural networks. <em>Singal, Image and Video Processing</em>, <strong>2020</strong>, 14:257–265. <a href="https://doi.org/10.1007/s11760-019-01548-8" target="_blank">DOI 10.1007/s11760-019-01548-8</a>
+    [3] &nbsp; <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Faster super-resolution by improved frequency domain neural networks. <em>Singal, Image and Video Processing</em>, <strong>2020</strong>, 14:257–265. <a href="https://doi.org/10.1007/s11760-019-01548-8" target="_blank">DOI 10.1007/s11760-019-01548-8</a>
 
-<hr>
+    <hr>
 
 		<div align="center"><img src="./images/papers/t-SVD.png" align="middle" width="600" title="Fig. 5"></div>
-	<p><strong>Fig. 5</strong>&emsp;Illustration of the t-SVD of an \(n_1 \times n_2 \times n_3\) tensor, i.e., \(\mathcal{A} = \mathcal{U} * \mathcal{S} * \mathcal{V}^{\text{T}}\). Our tensor nuclear norm \(\|\mathcal{A}\|_*\) is defined as the sum of singular values of all frontal slices of the f-diagonal \(\mathcal{S}\), i.e.,	\( \|\mathcal{A}\|_* \triangleq \text{tr}(\mathcal{S}) = \sum_{i=1}^{n_3} \text{tr}({S}^{(i)}) =  \text{tr}(\bar{{S}}^{(1)}) = \|\bar{{A}}^{(1)}\|_*\). Note that our tensor nuclear norm becomes standard matrix nuclear norm when \(n_3 = 1\). Thus, our tensor nuclear norm can be considered as a direct extension from the matrix case to the tensor case. 
+	<p><strong>Fig. 9</strong>&emsp;Illustration of the t-SVD of an \(n_1 \times n_2 \times n_3\) tensor, i.e., \(\mathcal{A} = \mathcal{U} * \mathcal{S} * \mathcal{V}^{\text{T}}\). Our tensor nuclear norm \(\|\mathcal{A}\|_*\) is defined as the sum of singular values of all frontal slices of the f-diagonal \(\mathcal{S}\), i.e.,	\( \|\mathcal{A}\|_* \triangleq \text{tr}(\mathcal{S}) = \sum_{i=1}^{n_3} \text{tr}({S}^{(i)}) =  \text{tr}(\bar{{S}}^{(1)}) = \|\bar{{A}}^{(1)}\|_*\). Note that our tensor nuclear norm becomes standard matrix nuclear norm when \(n_3 = 1\). Thus, our tensor nuclear norm can be considered as a direct extension from the matrix case to the tensor case. 
 	</p>
 
     \begin{equation} \label{eq:tnnr_with_max}
@@ -124,12 +181,12 @@
     \end{aligned}
     \end{equation}
     
-    [3] &nbsp; <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Low-rank tensor completion by truncated nuclear norm regularization. 24th International Conference on Pattern Recognition, Beijing, <strong>2018</strong>, p.2600-2605. <a href="https://ieeexplore.ieee.org/abstract/document/8546008" target="_blank">DOI 10.1109/ICPR.2018.8546008</a>
+    [4] &nbsp; <strong>S. Xue</strong>, W. Qiu, F. Liu, and X. Jin. Low-rank tensor completion by truncated nuclear norm regularization. 24th International Conference on Pattern Recognition, Beijing, <strong>2018</strong>, p.2600-2605. <a href="https://ieeexplore.ieee.org/abstract/document/8546008" target="_blank">DOI 10.1109/ICPR.2018.8546008</a>
 
-<hr>
+    <hr>
 
 	<div align="center"><img src="./images/papers/Xue2017Robust.png" align="middle" width="500" height="400" title="Fig. 6"></div>
-	<p><strong>Fig. 6</strong>&emsp;An example of CPLRR architecture with 3 classes. In a classwise
+	<p><strong>Fig. 10</strong>&emsp;An example of CPLRR architecture with 3 classes. In a classwise
 	  manner, our approach jointly aligns images and learns a nonlinear
 	  projective function. It separates out the low-rank components with the
 	  domain transformations and projects the original corrupted images to
@@ -143,16 +200,16 @@
     & \! - \sum_{j=1}^{N} ||A_i - f(W_iD_j + B_i)||_\mathrm{F}^2 < \xi,\ j \neq i . \\
     \end{aligned}
     \end{equation}
+	
+	[5] &nbsp; <strong>S. Xue</strong> and X. Jin. Robust classwise and projective low-rank representation for image classification. <em>Signal, Image and Video Processing</em>, <strong>2018</strong>, 12(1):107-115. <a href="https://doi.org/10.1007/s11760-017-1136-1" target="_blank">DOI 10.1007/s11760-017-1136-1</a>
 
-	[4] &nbsp; <strong>S. Xue</strong> and X. Jin. Robust classwise and projective low-rank representation for image classification. <em>Signal, Image and Video Processing</em>, <strong>2018</strong>, 12(1):107-115. <a href="https://doi.org/10.1007/s11760-017-1136-1" target="_blank">DOI 10.1007/s11760-017-1136-1</a>
-
-<hr>
+    <hr>
 
 <footer class="site-footer">
 
     <span class="site-footer-owner">This page is maintained by <a href="#">Shengke Xue</a>.</span>
 	<span class="site-footer-credits">Created on Wednesday, 30-Nov-2016. Last modified on </span>
-	<!-- #BeginDate format:wfcEn2 -->Sunday, 23-Feb-2020<!-- #EndDate -->.
+	<!-- #BeginDate format:wfcEn2 -->Sunday, 02-Aug-2020<!-- #EndDate -->.
   </footer>
     
 </section>
